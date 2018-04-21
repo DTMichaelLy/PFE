@@ -37,7 +37,7 @@ void setup(){
 
 //un boucle qui si repete plusieurs fois pour afficher la position et de verifier si on a une appel
 void loop(){
-     GetGPS(); //appel le fonction getGPS
+    
      CheckCall();} //appel le fonction CheckCall
 
 //si on a un appel, enregistre le numero et assigne le numero à remoteNumber  
@@ -49,7 +49,8 @@ void CheckCall(){
       VC.retrieveCallingNumber(remoteNumber, 20);  
       Serial.println(remoteNumber);
       VC.hangCall();
-      SendText();}
+      GetGPS(); //appel le fonction getGPS
+      SendText();} //appel le fonction SendText
 }
 
 //fonction qui affiche la lat et la lon
